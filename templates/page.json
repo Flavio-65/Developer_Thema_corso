@@ -3,7 +3,6 @@
         "template": {
             "type": "template-page"
         }
-       
     },
     "order": ["template"]
 }
