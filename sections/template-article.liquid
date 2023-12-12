@@ -27,7 +27,8 @@
             {% when 'featured_image' %}
                 <div class="max-w-7xl bg-blue-100 rounded-lg mx-2 md:mx-auto overflow-hidden my-4">
                     {% if article.image != blank %}
-                        <img itemprop="image" {{ article.image | image_url: image.width | image_tag: class: "w-full h-80 md:h-96 object-cover object-center" }}>
+                            {{ article.image | image_url: width: 450 | image_tag: class: "w-full h-80 md:h-96 object-cover object-center" }} 
+                        <!--<img itemprop="image" {{ article.image | image_url: width: 450 | image_tag: class: "w-full h-80 md:h-96 object-cover object-center" }}> -->
                     {% else %}
                         {% assign placeholder_image = 'image' %}        
                         {{ placeholder_image | placeholder_svg_tag: "w-full h-80 md:h-96 object-cover object-center p-5" }}
@@ -161,7 +162,7 @@
     "headline": {{ article.title | json }},
     "articleBody": {{ article.content | strip_html | json }},
     {% if article.excerpt != blank %}
-        "description": {{ article.excerpt | strip_html |  json }},
+        "description": {{ article.excerpt | strip_html | json }},
     {% endif %}
     {% if article.image %}
         "image": [
@@ -169,7 +170,7 @@
         ],   
     {% endif %}
     "datePublished": {{ article.published_at | date: format: "default" | json }},
-    "dateCreated": {{ article.created_at | date: format: "default" |json }},
+    "dateCreated": {{ article.created_at | date: format: "default" | json }},
     "author": {
         "@type": "Person",
         "name": {{ article.author | json }}
