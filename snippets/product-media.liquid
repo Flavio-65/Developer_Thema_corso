@@ -1,6 +1,6 @@
 {% case media.media_type %}
     {% when 'image' %}
-        {{ media | image_url: width: 600 height: 600 | image_tag: class: "w-full h-full object-cover", alt: media.preview_image.alt }}
+        {{ media | image_url: width: 400, height: 300 | image_tag: class: "w-full h-full object-cover", alt: media.preview_image.alt }}
     {% when 'external_video' %}
         {{ media | external_video_tag: class: "w-full h-80 object-cover" }}
     
@@ -11,7 +11,7 @@
         {{ media | model_viewer_tag }}
 
     {% else %}
-        {{ media | media_tag }}
+        {{ media | media_tag: width: 400, height: 300 }}
         
 {% endcase %}
  

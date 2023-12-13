@@ -9,7 +9,7 @@
                             <a href="{{ collection.url }}">
                                 <div class="h-80 overflow-hidden">
                                     {% if collection.featured_image != blank %}
-                                        {{ collection.featured_image | image_url: width: 600 height: 600| image_tag: alt: collection.title, class: 'w-full h-full object-cover transition duration-1000 ease-in-out tranform hover:scale-200' | escape }}
+                                        {{ collection.featured_image | image_url: width: 600, height: 600| image_tag: alt: collection.title.alt, class: 'w-full h-full object-cover transition duration-1000 ease-in-out tranform hover:scale-200' | escape }}
                                     {% else %}
                                         {{ 'collection-1' | placeholder_svg_tag }}
                                     {% endif %}

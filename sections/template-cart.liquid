@@ -18,7 +18,7 @@
                                 <td Class="py-4 px-2 flex flex-col justify-center">
                                     <a href="{{ item.url }}">
                                         {% if item.image %}
-                                            {{ item.image | image_url: width: 6000 | image_tag: alt: item.title, class: 'w-28 h-28 object-cover border' | escape }}
+                                            {{ item.image | image_url: width: 6000 | image_tag: alt: item.title.alt, class: 'w-28 h-28 object-cover border' | escape }}
                                         {% else %}
                                             {{ 'product-1' | placeholder_svg_tag: 'w-20 h-20 object-cover border' }}
                                         {% endif %}
